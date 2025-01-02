@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  prepare:
+    cmds:
+      - go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.61.0
+
+  test:
+    cmds:
+      - golangci-lint run
+
+  build:
+     cmds:
+      - go build -o helpdesk main.go
